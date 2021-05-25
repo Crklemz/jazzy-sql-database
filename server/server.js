@@ -1,6 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const pg = require('pg');
+//pg configuration: LOCAL ONLY - try to put on huroku - wont work
+const Pool = pg.Pool;
+const pool = new Pool({
+    database: 'jazzy_sql', //this changes by project - its the name of your database
+    host: 'localhost', //doesn't really ever change
+    port: 5432, // doesn't really ever change
+})
+
 const app = express();
 const PORT = 5000;
 
